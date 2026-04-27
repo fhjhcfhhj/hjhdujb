@@ -214,19 +214,33 @@ function Fenglib:CreateWindow(Config)
     HolderPadding.Parent = NotificationHolder
 
     local MainFrame = Instance.new("Frame")
-    MainFrame.Size = UDim2.new(0, 0, 0, 0) 
-    MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-    MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-    MainFrame.ClipsDescendants = false
-    MainFrame.BackgroundTransparency = 0.05
-    MainFrame.Parent = ScreenGui
-    Instance.new("UICorner", MainFrame).CornerRadius = UDim.new(0, 14)
-    AddToRegistry(MainFrame, "BackgroundColor3", "Main")
+MainFrame.Size = UDim2.new(0, 0, 0, 0) 
+MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.ClipsDescendants = false
+MainFrame.BackgroundTransparency = 1
+MainFrame.Parent = ScreenGui
+Instance.new("UICorner", MainFrame).CornerRadius = UDim.new(0, 14)
+AddToRegistry(MainFrame, "BackgroundColor3", "Main")
 
-    local Stroke = Instance.new("UIStroke")
-    Stroke.Thickness = 2
-    Stroke.Parent = MainFrame
-    AddToRegistry(Stroke, "Color", "Stroke")
+-- ↓↓↓ 这行已经改成你要的图片 ID：91450721465201 ↓↓↓
+local BackgroundImage = Instance.new("ImageLabel")
+BackgroundImage.Size = UDim2.new(1, 0, 1, 0)
+BackgroundImage.Position = UDim2.new(0, 0, 0, 0)
+BackgroundImage.BackgroundTransparency = 1
+BackgroundImage.Image = "rbxassetid://91450721465201"
+BackgroundImage.ScaleType = Enum.ScaleType.Cover
+BackgroundImage.ZIndex = -10
+BackgroundImage.Parent = MainFrame
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 14)
+UICorner.Parent = BackgroundImage
+
+local Stroke = Instance.new("UIStroke")
+Stroke.Thickness = 2
+Stroke.Parent = MainFrame
+AddToRegistry(Stroke, "Color", "Stroke")
+
 
     local Gradient = Instance.new("UIGradient")
     Gradient.Parent = Stroke
@@ -911,7 +925,7 @@ function Fenglib:CreateWindow(Config)
     OpenButton.Size = UDim2.new(0, 40, 0, 40)
     OpenButton.Active = true
     OpenButton.Draggable = true  
-    OpenButton.Image = "rbxassetid://84830962019412"  
+    OpenButton.Image = "rbxassetid://80732857736726"  
     OpenButton.ImageColor3 = Color3.fromRGB(255, 255, 255)
     OpenButton.ImageTransparency = 0.15
     OpenButton.ZIndex = 10  
