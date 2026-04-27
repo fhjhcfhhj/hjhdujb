@@ -223,18 +223,17 @@ MainFrame.Parent = ScreenGui
 Instance.new("UICorner", MainFrame).CornerRadius = UDim.new(0, 14)
 AddToRegistry(MainFrame, "BackgroundColor3", "Main")
 
--- ↓↓↓ 这行已经改成你要的图片 ID：91450721465201 ↓↓↓
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Size = UDim2.new(1, 0, 1, 0)
-BackgroundImage.Position = UDim2.new(0, 0, 0, 0)
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Image = "rbxassetid://91450721465201"
-BackgroundImage.ScaleType = Enum.ScaleType.Cover
-BackgroundImage.ZIndex = -10
-BackgroundImage.Parent = MainFrame
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 14)
-UICorner.Parent = BackgroundImage
+-- 你要的背景图：91450721465201
+local bg = Instance.new("ImageLabel")
+bg.Size = UDim2.new(1,0,1,0)
+bg.BackgroundTransparency = 1
+bg.Image = "rbxassetid://91450721465201"
+bg.ScaleType = Enum.ScaleType.Cover
+bg.ZIndex = -10
+bg.Parent = MainFrame
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0,14)
+corner.Parent = bg
 
 local Stroke = Instance.new("UIStroke")
 Stroke.Thickness = 2
